@@ -22,14 +22,14 @@
     <div class="jumbotron" style="background-color:#333;padding-top:20px;padding-bottom:0px;margin-bottom:20px;">
         <div class="container">
 		<h1>Chaoliu1995</h1>
-            <form class="form-inline">
+            <div class="form-inline">
                 <div class="form-group-lg" style="text-align:center;">
-                    <input type="text" placeholder="Search" class="form-control" id="searchText" />
+                    <input type="text" placeholder="Search" class="form-control" onkeydown="enter(event)" id="searchText" />
                     <input type="button" class="btn btn-lg btn-primary" value="百度" onclick="search('baidu')" />
                     <input type="button" class="btn btn-lg btn-primary" value="Bing" onclick="search('bing')" />
                     <input type="button" class="btn btn-lg btn-primary" value="Google" onclick="search('google')" />
                 </div>
-    	   </form>
+    	   </div>
 	   </div>
 	</div>
 	<div class="container">
@@ -118,13 +118,18 @@
                 return;
             }
             if(type=="baidu"){
-                window.open("https://www.baidu.com/baidu/?wd="+searchText);
+                window.open("https://www.baidu.com/baidu?wd="+searchText);
             }else if(type=="google"){
                 window.open("https://www.google.com/search?q="+searchText);
             }else if (type=="bing") {
                 window.open("https://www.bing.com/search?q="+searchText);
             }
         }
+        function enter(e){
+    		if(e.keyCode==13) {
+    			search("baidu");
+    		}
+    	}
     </script>
 </body>
 </html>
