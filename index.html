@@ -7,131 +7,206 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Chaoliu1995</title>
-    <link href="js/bootstrap.css" rel="stylesheet">
-	<link href="js/bootstrap-theme.min.css" rel="stylesheet">
+    <title>导航</title>
 	<style>
 		html,body{background-color:#333;}
 		body{ margin:0px; padding:0px;line-height: 1.6; font-size: 14pt; color:#FFF;
 				font-family: Consolas,'Consolas', '微软雅黑', 'Microsoft YaHei UI', 'Hiragino Sans GB',SimSun, SimHei, arial, sans-serif; }
-		#footer{ width:100%; height:100px; line-height:40px; text-align: center; }
-        .btn{margin-top: 6px;margin-bottom: 6px;}
+        #container{ width:80%; margin:50px auto 0px; }
+        #searchDiv{margin-top: 30px;}
+        #searchText{
+            width: 55%;
+            height: 46px;
+            border-radius: 6px;
+            border: 1px #CCC solid;
+            text-indent: 10px;
+            font-size: 20px;
+        }
+        .searchBtn{
+            width: 100px;
+            height: 52px;
+            border-radius: 6px;
+            border: 1px solid;
+            font-size: 18px;
+        }
+        #navUL{
+            margin-top: 50px;
+            list-style-type: none;
+        }
+        #navUL>li{
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .navTitle{
+            width: 100px;
+            text-align: center;
+            height: 40px;
+            border: 1px solid;
+            border-radius: 40px;
+            background-color: #FFF;
+            font-size: 18px;
+        }
+        .leftDiv{
+            width: 100px;
+            text-align: center;
+            height: 40px;
+            display: inline-block;
+            float: left;
+        }
+        .rightDiv{
+            margin-left: 30px;
+            display: inline-block;
+            width:80%;
+        }
+        .linkBtn{
+            color:#FFF;
+            display: inline-block;
+            margin-right: 10px;
+            height: 40px;
+            line-height: 40px;
+        }
+		#footer{ width:100%; height:100px; line-height:90px; text-align: center; border-top: 1px dashed #FFF; }
 	</style>
 </head>
 <body>
-    <div class="jumbotron" style="background-color:#333;padding-top:20px;padding-bottom:0px;margin-bottom:20px;">
-        <div class="container">
-		<h1>Chaoliu1995</h1>
-            <div class="form-inline">
-                <div class="form-group-lg" style="text-align:center;">
-                    <input type="text" placeholder="Search" class="form-control" onkeydown="enter(event)" id="searchText" />
-                    <input type="button" class="btn btn-lg btn-primary" value="百度" onclick="search('baidu')" />
-                    <input type="button" class="btn btn-lg btn-primary" value="Bing" onclick="search('bing')" />
-                    <input type="button" class="btn btn-lg btn-primary" value="Google" onclick="search('google')" />
-                </div>
-    	   </div>
-	   </div>
-	</div>
-	<div class="container">
-        <div>
-			<button class="btn btn-primary btn-lg">Search</button>
-			<a class="btn btn-default btn-lg" target="view_window" href="https://www.google.com/ncr">Google</a>
-			<a class="btn btn-default btn-lg" target="view_window" href="http://cn.bing.com/">Bing</a>
-			<a class="btn btn-default btn-lg" target="view_window" href="https://www.baidu.com/">百度</a>
-			<a class="btn btn-default btn-lg" target="view_window" href="https://www.duckduckgo.com">Duckduckgo</a>
-		</div>
-        <div>
-			<button class="btn btn-primary btn-lg">Translate</button>
-			<a class="btn btn-default btn-lg" target="view_window" href="http://translate.google.cn/">谷歌翻译</a>
-			<a class="btn btn-default btn-lg" target="view_window" href="http://www.bing.com/translator/">Bing翻译</a>
-			<a class="btn btn-default btn-lg" target="view_window" href="http://fanyi.baidu.com/">百度翻译</a>
-		</div>
-        <div>
-			<button class="btn btn-primary btn-lg">Developer</button>
-			<a class="btn btn-default btn-lg" target="view_window" href="http://www.github.com/">Github</a>
-			<a class="btn btn-default btn-lg" target="view_window" href="http://www.aliyun.com/">Aliyun</a>
-            <a class="btn btn-default btn-lg" target="view_window" href="http://mvnrepository.com/">Maven Repository</a>
-		</div>
-        <div>
-			<button class="btn btn-primary btn-lg">Community</button>
-			<a class="btn btn-default btn-lg" target="view_window" href="http://www.zhihu.com/">知乎</a>
-			<a class="btn btn-default btn-lg" target="view_window" href="http://www.bilibili.com/">哔哩哔哩</a>
-			<a class="btn btn-default btn-lg" target="view_window" href="https://segmentfault.com/">SegmentFault</a>
-			<a class="btn btn-default btn-lg" target="view_window" href="http://music.163.com/">网易云音乐</a>
-			<a class="btn btn-default btn-lg" target="view_window" href="https://www.pixiv.net/">Pixiv</a>
-            <a class="btn btn-default btn-lg" target="view_window" href="http://store.steampowered.com/">Steam</a>
-            <a class="btn btn-default btn-lg" target="view_window" href="https://www.qidian.com/">起点中文网</a>
-            <a class="btn btn-default btn-lg" target="view_window" href="https://www.douban.com/">豆瓣</a>
-		</div>
-		<div>
-			<button class="btn btn-primary btn-lg">Shopping</button>
-			<a class="btn btn-default btn-lg" target="view_window" href="https://www.jd.com">京东</a>
-			<a class="btn btn-default btn-lg" target="view_window" href="http://www.taobao.com/">淘宝</a>
-			<a class="btn btn-default btn-lg" target="view_window" href="http://www.lativ.com/">诚衣</a>
-			<a class="btn btn-default btn-lg" target="view_window" href="https://www.amazon.cn/">Amazon</a>
-		</div>
-        <div>
-            <button class="btn btn-primary btn-lg">Tools</button>
-            <a class="btn btn-default btn-lg" target="view_window" href="https://note.wiz.cn/login">为知笔记</a>
-            <a class="btn btn-default btn-lg" target="view_window" href="https://pan.baidu.com/">百度网盘</a>
-            <a class="btn btn-default btn-lg" target="view_window" href="https://wx.qq.com/">微信</a>
-            <a class="btn btn-default btn-lg" target="view_window" href="http://naotu.baidu.com/">百度脑图</a>
-        </div>
-        <div>
-            <button class="btn btn-primary btn-lg">MDN</button>
-            <a class="btn btn-default btn-lg" target="view_window" href="https://developer.mozilla.org/zh-CN/">MDN-Index</a>
-            <a class="btn btn-default btn-lg" target="view_window" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript">MDN-JS</a>
-            <a class="btn btn-default btn-lg" target="view_window" href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5">MDN-HTML5</a>
-            <a class="btn btn-default btn-lg" target="view_window" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS">MDN-CSS</a>
-            <a class="btn btn-default btn-lg" target="view_window" href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/Graphics">MDN-Graphics</a>
-            <a class="btn btn-default btn-lg" target="view_window" href="https://developer.mozilla.org/zh-CN/docs/Web/API">Web API</a>
-        </div>
-		<div>
-			<button class="btn btn-primary btn-lg">Blog</button>
-			<a class="btn btn-default btn-lg" target="view_window" href="http://mindhacks.cn/">刘未鹏</a>
-			<a class="btn btn-default btn-lg" target="view_window" href="http://www.ruanyifeng.com/blog/">阮一峰</a>
-			<a class="btn btn-default btn-lg" target="view_window" href="http://www.cppblog.com/vczh/">VCZH</a>
-		</div>
-		<div>
-			<button class="btn btn-primary btn-lg">Email</button>
-			<a class="btn btn-default btn-lg" target="view_window" href="http://mail.qq.com/">QQ</a>
-			<a class="btn btn-default btn-lg" target="view_window" href="http://mail.google.com/">Gmail</a>
-			<a class="btn btn-default btn-lg" target="view_window" href="https://outlook.live.com/owa/">Outlook</a>
-			<a class="btn btn-default btn-lg" target="view_window" href="http://mail.163.com/">163</a>
-		</div>
-		<div>
-            <button class="btn btn-primary btn-lg">Education</button>
-            <a class="btn btn-default btn-lg" target="view_window" href="https://www.khanacademy.org/">可汗学院</a>
-            <a class="btn btn-default btn-lg" target="view_window" href="https://cn.udacity.com/">Udacity</a>
-            <a class="btn btn-default btn-lg" target="view_window" href="https://www.coursera.org">Coursera</a>
-            <a class="btn btn-default btn-lg" target="view_window" href="http://www.imooc.com/">慕课网</a>
-            <a class="btn btn-default btn-lg" target="view_window" href="https://open.163.com/">网易公开课</a>
-            <a class="btn btn-default btn-lg" target="view_window" href="http://www.neea.edu.cn/">中国教育考试网</a>
-        </div>
-	</div>
-	<hr/>
-	<footer id="footer">
-		Copyright © 2017 Chaoliu1995. All rights reserved. 晋ICP备17007468号
-	</footer>
-    <script type="text/javascript">
-        function search(type) {
-            var searchText = document.querySelector("#searchText").value;
-            if(searchText == null || searchText == ""){
-                return;
-            }
-            if(type=="baidu"){
-                window.open("https://www.baidu.com/baidu?wd="+searchText);
-            }else if(type=="google"){
-                window.open("https://www.google.com/search?q="+searchText);
-            }else if (type=="bing") {
-                window.open("https://www.bing.com/search?q="+searchText);
-            }
+<p style="margin: 50px 0px 30px 100px;">
+    Life is like a Markov chain, your future only depends on what you are doing now, and independent of your past.
+</p>
+<div id="container">
+    <div id="searchDiv">
+        <input type="text" placeholder="Search" onkeydown="enter(event)" id="searchText" />
+        <input type="button" class="searchBtn" value="百度" onclick="search('baidu')" />
+        <input type="button" class="searchBtn" value="Bing" onclick="search('bing')" />
+        <input type="button" class="searchBtn" value="Google" onclick="search('google')" />
+    </div>
+    <ul id="navUL">
+        <li>
+            <div class="leftDiv"><button class="navTitle" type="button">搜索</button></div>
+            <div class="rightDiv">
+                <a class="linkBtn" target="view_window" href="https://www.google.com/ncr">Google</a>
+                <a class="linkBtn" target="view_window" href="http://cn.bing.com/">Bing</a>
+                <a class="linkBtn" target="view_window" href="https://www.baidu.com/">百度</a>
+                <a class="linkBtn" target="view_window" href="https://www.duckduckgo.com">Duckduckgo</a>
+            </div>
+        </li>
+        <li>
+            <div class="leftDiv"><button class="navTitle" type="button">翻译</button></div>
+            <div class="rightDiv">
+                <a class="linkBtn" target="view_window" href="http://translate.google.cn/">谷歌翻译</a>
+                <a class="linkBtn" target="view_window" href="http://www.bing.com/translator/">Bing翻译</a>
+                <a class="linkBtn" target="view_window" href="http://fanyi.baidu.com/">百度翻译</a>
+            </div>
+        </li>
+        <li>
+            <div class="leftDiv"><button class="navTitle" type="button">编程</button></div>
+            <div class="rightDiv">
+                <a class="linkBtn" target="view_window" href="http://www.github.com/">Github</a>
+                <a class="linkBtn" target="view_window" href="http://www.aliyun.com/">Aliyun</a>
+                <a class="linkBtn" target="view_window" href="http://mvnrepository.com/">Maven Repository</a>
+            </div>
+        </li>
+        <li>
+            <div class="leftDiv"><button class="navTitle" type="button">娱乐</button></div>
+            <div class="rightDiv">
+                <a class="linkBtn" target="view_window" href="http://www.zhihu.com/">知乎</a>
+                <a class="linkBtn" target="view_window" href="http://www.bilibili.com/">哔哩哔哩</a>
+                <a class="linkBtn" target="view_window" href="https://segmentfault.com/">SegmentFault</a>
+                <a class="linkBtn" target="view_window" href="http://music.163.com/">网易云音乐</a>
+                <a class="linkBtn" target="view_window" href="https://www.pixiv.net/">Pixiv</a>
+                <a class="linkBtn" target="view_window" href="http://store.steampowered.com/">Steam</a>
+                <a class="linkBtn" target="view_window" href="https://www.qidian.com/">起点中文网</a>
+                <a class="linkBtn" target="view_window" href="https://www.douban.com/">豆瓣</a>
+                <a class="linkBtn" target="view_window" href="https://www.duitang.com/">堆糖</a>
+                <a class="linkBtn" target="view_window" href="http://www.yinyuetai.com/">音悦Tai</a>
+            </div>
+        </li>
+        <li>
+            <div class="leftDiv"><button class="navTitle" type="button">科技</button></div>
+            <div class="rightDiv">
+                <a class="linkBtn" target="view_window" href="https://cn.engadget.com/">Engadget-中文</a>
+                <a class="linkBtn" target="view_window" href="https://engadget.com/">Engadget</a>
+                <a class="linkBtn" target="view_window" href="http://www.pingwest.com/">品玩</a>
+                <a class="linkBtn" target="view_window" href="http://www.dgtle.com/">数字尾巴</a>
+            </div>
+        </li>
+        <li>
+            <div class="leftDiv"><button class="navTitle" type="button">购物</button></div>
+            <div class="rightDiv">
+                <a class="linkBtn" target="view_window" href="https://www.jd.com">京东</a>
+                <a class="linkBtn" target="view_window" href="http://www.taobao.com/">淘宝</a>
+                <a class="linkBtn" target="view_window" href="http://www.lativ.com/">诚衣</a>
+                <a class="linkBtn" target="view_window" href="https://www.amazon.cn/">Amazon</a>
+                <a class="linkBtn" target="view_window" href="https://www.smzdm.com/">什么值得买</a>
+            </div>
+        </li>
+        <li>
+            <div class="leftDiv"><button class="navTitle" type="button">工具</button></div>
+            <div class="rightDiv">
+                <a class="linkBtn" target="view_window" href="https://note.wiz.cn/login">为知笔记</a>
+                <a class="linkBtn" target="view_window" href="https://pan.baidu.com/">百度网盘</a>
+                <a class="linkBtn" target="view_window" href="https://wx.qq.com/">微信</a>
+                <a class="linkBtn" target="view_window" href="http://naotu.baidu.com/">百度脑图</a>
+            </div>
+        </li>
+        <li>
+            <div class="leftDiv"><button class="navTitle" type="button">文档</button></div>
+            <div class="rightDiv">
+                <a class="linkBtn" target="view_window" href="https://developer.mozilla.org/zh-CN/">MDN-Index</a>
+                <a class="linkBtn" target="view_window" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript">MDN-JS</a>
+                <a class="linkBtn" target="view_window" href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5">MDN-HTML5</a>
+                <a class="linkBtn" target="view_window" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS">MDN-CSS</a>
+                <a class="linkBtn" target="view_window" href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/Graphics">MDN-Graphics</a>
+                <a class="linkBtn" target="view_window" href="https://developer.mozilla.org/zh-CN/docs/Web/API">Web API</a>
+                <a class="linkBtn" target="view_window" href="http://www.mybatis.org/mybatis-3/zh/">mybatis</a>
+                
+            </div>
+        </li>
+        <li>
+            <div class="leftDiv"><button class="navTitle" type="button">邮箱</button></div>
+            <div class="rightDiv">
+                <a class="linkBtn" target="view_window" href="http://mail.qq.com/">QQ</a>
+                <a class="linkBtn" target="view_window" href="http://mail.google.com/">Gmail</a>
+                <a class="linkBtn" target="view_window" href="https://outlook.live.com/owa/">Outlook</a>
+                <a class="linkBtn" target="view_window" href="http://mail.163.com/">163</a>
+                <a class="linkBtn" target="view_window" href="https://qiye.aliyun.com/">阿里邮箱</a>
+            </div>
+        </li>
+        <li>
+            <div class="leftDiv"><button class="navTitle" type="button">教育</button></div>
+            <div class="rightDiv">
+                <a class="linkBtn" target="view_window" href="https://www.khanacademy.org/">可汗学院</a>
+                <a class="linkBtn" target="view_window" href="https://cn.udacity.com/">Udacity</a>
+                <a class="linkBtn" target="view_window" href="https://www.coursera.org">Coursera</a>
+                <a class="linkBtn" target="view_window" href="http://www.imooc.com/">慕课网</a>
+                <a class="linkBtn" target="view_window" href="https://open.163.com/">网易公开课</a>
+                <a class="linkBtn" target="view_window" href="http://www.neea.edu.cn/">中国教育考试网</a>
+            </div>
+        </li>
+        
+    </ul>
+</div>
+<footer id="footer">
+    Copyright © 2017 Chaoliu1995. All rights reserved. 晋ICP备17007468号
+</footer>
+<script type="text/javascript">
+    function search(type) {
+        var searchText = document.querySelector("#searchText").value;
+        if(searchText == null || searchText == ""){
+            return;
         }
-        function enter(e){
-    		if(e.keyCode==13) {
-    			search("baidu");
-    		}
-    	}
-    </script>
+        if(type=="baidu"){
+            window.open("https://www.baidu.com/baidu?wd="+searchText);
+        }else if(type=="google"){
+            window.open("https://www.google.com/search?q="+searchText);
+        }else if (type=="bing") {
+            window.open("https://www.bing.com/search?q="+searchText);
+        }
+    }
+    function enter(e){
+        if(e.keyCode==13) {
+            search("baidu");
+        }
+    }
+</script>
 </body>
 </html>
